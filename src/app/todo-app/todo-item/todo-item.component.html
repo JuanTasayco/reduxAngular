@@ -1,0 +1,10 @@
+<li [ngClass]="{'completed' : todo.complete , 'editing' : editando}">
+    <div class="view">
+        <input (click)="completeTask()" class="toggle" type="checkbox" [checked]="todo.complete">
+        <label (dblclick)="changeToEditMode()">{{todo.contentText}}</label>
+        <button (click)="deleteTodo()" class="destroy"></button>
+    </div>
+    <form [formGroup]="todoForm" (ngSubmit)="sendEdit()">
+        <input class="edit" formControlName="taskEdit">
+    </form>
+</li>
