@@ -9,6 +9,7 @@ import { TodoFooterComponent } from './todo-footer/todo-footer.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TodoPageComponent } from './todo-page/todo-page.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TodoAddComponent,
     TodoFooterComponent,
     TodoItemComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoPageComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TodoAddComponent,
     TodoFooterComponent,
     TodoItemComponent,
-    TodoListComponent
+    TodoListComponent,
+    TodoPageComponent
   ],
   providers: [provideStore({ todo: todoReducer })]
 })

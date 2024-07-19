@@ -5,6 +5,6 @@
         <button (click)="deleteTodo()" class="destroy"></button>
     </div>
     <form [formGroup]="todoForm" (ngSubmit)="sendEdit()">
-        <input class="edit" formControlName="taskEdit">
+        <input (blur)="terminarEdicion()" class="edit" formControlName="taskEdit">
     </form>
 </li>

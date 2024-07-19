@@ -28,6 +28,8 @@ export class TodoItemComponent implements OnInit {
   changeToEditMode() { this.editando = !this.editando; }
 
   sendEdit() {
+    if (this.todoForm.get('taskEdit')?.value === this.todo.contentText) return;
+
     if (this.todoForm.get('taskEdit')?.valid) {
       const newText = this.todoForm.get('taskEdit')?.value;
       this.store.dispatch(actions.editItem({ id: this.todo.id, texto: newText }));
@@ -41,5 +43,9 @@ export class TodoItemComponent implements OnInit {
 
   deleteTodo() {
     this.store.dispatch(actions.deleteItem({ id: this.todo.id }));
+  }
+
+  terminarEdicion() {
+    this.editando = !this.editando;
   }
 }
